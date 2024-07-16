@@ -1,6 +1,6 @@
 import { FastifyReply, FastifyRequest } from 'fastify'
 import { z } from 'zod'
-import { registerUseCase } from '../use-cases/register'
+import { registerUseCase } from '@/use-cases/register'
 
 export const register = async (
   request: FastifyRequest,

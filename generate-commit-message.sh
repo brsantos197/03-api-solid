@@ -1,0 +1,1 @@
+git diff | cody chat --stdin -m "Escreva uma mensagem commit para esse diff em pt-BR"

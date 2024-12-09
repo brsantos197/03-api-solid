@@ -3,6 +3,13 @@ export interface Coordinate {
   longitude: number
 }
 
+/**
+ * Calculates the distance between two geographical coordinates in kilometers.
+ *
+ * @param from - The starting coordinate with latitude and longitude.
+ * @param to - The destination coordinate with latitude and longitude.
+ * @returns The distance between the two coordinates in kilometers.
+ */
 export function getDistanceBetweenCoordinates(
   from: Coordinate,
   to: Coordinate,

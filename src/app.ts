@@ -17,6 +17,7 @@ app.register(gymsRoutes)
 app.register(checkInsRoutes)
 
 app.setErrorHandler((error, _, reply) => {
+  console.error(error)
   if (error instanceof ZodError) {
     return reply
       .status(400)

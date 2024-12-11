@@ -1,4 +1,5 @@
 import { app } from '@/app'
+import { createAndAuthenticateUser } from '@/utils/test/create-and-authenticate-user'
 import request from 'supertest'
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 
@@ -15,15 +16,7 @@ describe('Profile (e2e)', () => {
       email: 'johndoe@example.com',
       password: '123456',
     }
-    await request(app.server).post('/users').send(user)
-
-    const authResponse = await request(app.server).post('/sessions').send({
-      email: user.email,
-      password: user.password,
-    })
-
-    const { token } = authResponse.body
-
+    const { token } = await createAndAuthenticateUser(app, user)
     const profileResponse = await request(app.server)
       .get('/me')
       .set('Authorization', `Bearer ${token}`)

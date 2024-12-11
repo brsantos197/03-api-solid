@@ -1,1 +1,1 @@
-git diff | cody chat --stdin -m "Escreva uma mensagem commit para esse diff em pt-BR com convenções de commit"
+git diff -- . ':(exclude)*lock*' | cody chat --stdin -m "Escreva uma mensagem commit para esse diff em pt-BR com convenções de commit"

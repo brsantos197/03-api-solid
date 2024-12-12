@@ -41,7 +41,6 @@ export async function createAndAuthenticateUser(
       role: data.isAdmin ? 'ADMIN' : 'MEMBER',
     },
   })
-  console.log(user)
   const authResponse = await request(app.server).post('/sessions').send({
     email: user.email,
     password: data.password,
